@@ -1,0 +1,29 @@
+int main() {
+    int a;
+    int b;
+    int c;
+    int d;
+    int e;
+    int f;
+    int g;
+    int h;
+    int i;
+    int j;
+    printf("Lutfen cekmek istediginiz para birimini giriniz:");scanf("%d",&a);
+    b = a;
+    c = a%10;
+    if (c==0) {
+        d = b / 100;
+        e = b % 100;
+        f = e / 50;
+        g = e % 50;
+        h = g / 20;
+        i = g % 20;
+        j = i / 10;
+        printf(" yuzluk sayisi = %d\n ellilik sayisi = %d\n yirmilik sayisi = %d\n onluk sayisi = %d\n",d,f,h,j);
+    }
+    else {
+        printf("yanlis para birimi lutfen olnluk giriniz");
+        return 0;
+    }
+}
