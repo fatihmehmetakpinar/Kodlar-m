@@ -1,0 +1,55 @@
+oid main()
+{
+    long long a;
+    int b;
+    int c;
+    int d;
+    printf("Ogrenci nosunu giriniz:");scanf("%lld",&a);
+    if (a>999999999 && a<10000000000) {
+        printf("vize notunuzu giriniz:");scanf("%d",&b);
+        printf("final notunuzu giriniz:");scanf("%d",&c);
+        b = b * 40/100;
+        c = c * 60/100;
+        d = b+c;
+
+        if (d>90) {
+            printf("%lld no lu ogrencimiz\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("AA aldi ve gecti \n toplam notu = %d\n",d);
+        }
+        else if (d>80) {
+            printf("%lld no lu ogrencinizin\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("AB aldi ve gecti \n toplam notu = %d\n",d);
+        }
+        else if (d>70) {
+            printf("%lld no lu ogrencimiz\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("BA aldi ve gecti \n toplam notu = %d\n",d);
+        }
+        else if (d>60) {
+            printf("%lld no lu ogrencimiz\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("BB aldi ve gecti \n toplam notu = %d\n",d);
+        }
+        else if (d>50) {
+            printf("%lld no lu ogrencimiz\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("C aldi ve gecti \n toplam notu = %d\n",d);
+        }
+        else {
+            printf("%lld no lu ogrencimiz\n",a);
+            printf("vize notu = %d\n",b);
+            printf("final notu = %d\n",c);
+            printf("F aldi ve kaldı \n toplam notu = %d\n",d);
+        }
+    }
+    else {
+        printf("ogrenci no hatali girdiniz");
+    }
+}
