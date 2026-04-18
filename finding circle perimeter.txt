@@ -1,0 +1,22 @@
+#define PI 3.14159
+int main() {
+    int a;
+    int b;
+    float c;
+printf("Lütfen yarı çapı giriniz:");scanf("%d",&a);
+    printf("alan için 1 e, cevre için 2 ye tıklayın");scanf("%d",&b);
+    if (b==1) {
+        c=PI*a*a;
+        printf("yari capi = %d",a);
+        printf("alani = %lf",c);
+    }
+    else if (b==2) {
+        c=PI*2*a;
+        printf("yari capi = %d",a);
+        printf("cevresi = %lf",c);
+    }
+    else {
+        printf( "yanlis tuslama");
+
+    }
+}
