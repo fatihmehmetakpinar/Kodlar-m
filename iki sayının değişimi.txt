@@ -1,0 +1,15 @@
+int main() {
+    int a;
+    int b;
+    int c;
+    printf("a sayisini giriniz:");scanf("%d",&a);
+    printf("b sayisini giriniz:");scanf("%d",&b);
+    c = a;
+    a = b;
+    b = c;
+    printf("iki sayinin değşimi");
+    printf("a = %d\n",a);
+    printf("b = %d\n",b);
+
+
+}
