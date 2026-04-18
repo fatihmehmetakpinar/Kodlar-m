@@ -1,0 +1,65 @@
+int main() {
+    char *cumle = NULL;
+    char *gecici_cumle = NULL;
+    char **kelimeler = NULL;
+    char **gecici_kelimeler = NULL;
+    char *kelime = NULL;
+    int ch;
+    int uzunluk = 0;
+    int kapasite = 5;
+    int sayac = 0;
+    int i;
+
+    printf("Bir cumle giriniz: ");
+
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+        uzunluk++;
+        gecici_cumle = (char *)realloc(cumle, (uzunluk + 1) * sizeof(char));
+
+        if (gecici_cumle == NULL) {
+            free(cumle);
+            return 1;
+        }
+
+        cumle = gecici_cumle;
+        cumle[uzunluk - 1] = (char)ch;
+    }
+
+    if (uzunluk > 0) {
+        cumle[uzunluk] = '\0';
+        kelimeler = (char **)malloc(kapasite * sizeof(char *));
+        if (kelimeler == NULL) {
+            free(cumle);
+            return 1;
+        }
+
+        kelime = strtok(cumle, " ");
+        while (kelime != NULL) {
+            if (sayac >= kapasite) {
+                kapasite *= 2;
+                gecici_kelimeler = (char **)realloc(kelimeler, kapasite * sizeof(char *));
+                if (gecici_kelimeler == NULL) {
+                    free(kelimeler);
+                    free(cumle);
+                    return 1;
+                }
+                kelimeler = gecici_kelimeler;
+            }
+            kelimeler[sayac] = kelime;
+            sayac++;
+            kelime = strtok(NULL, " ");
+        }
+
+        printf("Sonuc: ");
+        for (i = sayac - 1; i >= 0; i--) {
+            printf("%s", kelimeler[i]);
+            if (i > 0) printf(" ");
+        }
+        printf("\n");
+
+        free(kelimeler);
+    }
+
+    free(cumle);
+    return 0;
+}
