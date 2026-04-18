@@ -1,0 +1,12 @@
+int main() {
+    int a;
+    int b;
+    printf("a sayisi giriniz:");scanf("%d",&a);
+    b=a%2;
+    if(b==0) {
+        printf("cift sayi");
+    }
+    else {
+        printf("tek sayi");
+    }
+}
